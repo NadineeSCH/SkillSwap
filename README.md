@@ -30,26 +30,34 @@ This helps determine **early product-market fit** before building out full backe
 
 - **User Profile Page**
   - Displays current user's skills, image, and description.
+    
+  <img src="HomePage.png" alt="Profile Page" width="400"/>
 
 - **Match Discovery Page**
   - Uses hardcoded dummy data to simulate available matches.
   - Swap left or right to remove an undesirable match card.
   - Card shows "Waiting for response.." for matches awaiting response after request is sent.
+    
+    <img src="MatchPage.png" alt="Match Discovery Page" width="400"/>
 
 - **Send Request Interaction**
   - Users can tap on a match to open a dialog.
   - Dialog shows user info and allows sending a swap request by clicking on the "Send Skillswap Request" button. 
   - Click outside the dialog to cancel.
     
+    <img src="SendRequestDialog.png" alt="Send Request Interaction" width="400"/>
+    
 - **Receiving Request Interaction**
   - Users receives a dialog when another user sends in a swap request.
   - Users can choose to accept or decline the request.
+    
+    <img src="ReceiveRequestDialog.png" alt="Receiving Request Interaction" width="400"/>
 
 ---
 
 ## 🧭 Future Additions (Post-POC)
 
-- "Check Current Requests" page (for pending or sent requests).
+- "Check Current Requests" page (for pending or received requests).
 - Gamified points reward system as incentives for users to teach and learn.
 - Backend integration with real-time data and user authentication.
 - Messaging and scheduling system between users.
@@ -61,7 +69,7 @@ This helps determine **early product-market fit** before building out full backe
 
 Despite not being connected to real user data yet, this prototype simulates the **entire user flow** from discovery to engagement:
 
-- We can observe **interest and intent** based on user interactions.
+- We can observe **interest and intent** based on simulated user interactions.
 - It enables early feedback and iteration **without a full backend**.
 - Demonstrates feasibility of core matching logic and UX structure.
 
@@ -80,14 +88,6 @@ Despite not being connected to real user data yet, this prototype simulates the 
 - XML for layouts
 - Custom adapter and RecyclerView
 - Dialog-based interaction
-
----
-
-## 📷 Screenshots
-
-![Home Page](HomePage.png) ![Match Page](MatchPage.png)
-![Receive Request](ReceiveRequestDialog.png) ![Send Request](SendRequestDialog.png)
-
 
 ---
 
