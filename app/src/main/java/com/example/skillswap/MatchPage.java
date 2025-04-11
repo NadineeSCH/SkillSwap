@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MatchPage extends AppCompatActivity {
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,19 @@ public class MatchPage extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
 
+        });
+
+        //set back to home button function
+        backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //for demo purposes, we will not immediately navigate back
+                //instead, pop-up a simulated dialog for an incoming request
+                //after clicking either buttons on the dialog,go back to home
+                //finish();
+                showIncomingRequestDialog();
+            }
         });
 
         ////dummy data in place of database call
@@ -121,6 +136,9 @@ public class MatchPage extends AppCompatActivity {
 
     }
 
+
+
+    //showDialog function to display request details
     public void showDialog(Match match, MatchAdaptor adapter, int position){
         Dialog dialog = new Dialog(MatchPage.this);
         dialog.setContentView(R.layout.activity_set_match);
@@ -142,7 +160,7 @@ public class MatchPage extends AppCompatActivity {
             public void onClick(View v) {
                 match.setPending();
                 adapter.notifyItemChanged(position);
-                Toast.makeText(MatchPage.this,"Request sent",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MatchPage.this,"Request sent. They'll see it on their dashboard.",Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
         });
@@ -172,4 +190,38 @@ public class MatchPage extends AppCompatActivity {
         dialog.show();
 
     }
+
+    //FOR DEMO PURPOSES ONLY (incoming dialogue simulation)
+    private void showIncomingRequestDialog() {
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.incoming_request_dialog);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        ImageView userImage = dialog.findViewById(R.id.incomingUserImage);
+        TextView message = dialog.findViewById(R.id.requestMessage);
+        Button acceptBtn = dialog.findViewById(R.id.acceptRequest);
+        Button declineBtn = dialog.findViewById(R.id.declineRequest);
+        TextView theyLearn = dialog.findViewById(R.id.theyLearn);
+        TextView theyTeach = dialog.findViewById(R.id.theyTeach);
+
+        userImage.setImageResource(R.drawable.sample_profile_request);
+        message.setText("Alice is interested in your skill!");
+        theyLearn.setText("They want to learn: Photography");
+        theyTeach.setText("They can teach you: Dancing");
+
+        acceptBtn.setOnClickListener(v -> {
+            Toast.makeText(this, "Accepted!", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+            finish(); //simulation purposes only
+        });
+
+        declineBtn.setOnClickListener(v -> {
+            Toast.makeText(this, "Declined!", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+            finish(); //simulation purposes only
+        });
+
+        dialog.show();
+    }
+
 }
