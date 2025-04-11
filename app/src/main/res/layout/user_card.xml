@@ -21,8 +21,7 @@
             android:layout_height="80dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/placeholderprofile"
-            android:scaleType="centerCrop"
-            android:background="@drawable/profile_circle_background" />
+            android:scaleType="centerCrop" />
 
         <!-- Text & Button Section -->
         <LinearLayout
@@ -36,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="User Name"
+                android:fontFamily="sans-serif-black"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="#000000" />
@@ -44,6 +44,7 @@
                 android:id="@+id/match_learn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:text="What you can learn from them"
                 android:layout_marginTop="4dp"
                 android:textColor="#444444" />
@@ -52,6 +53,7 @@
                 android:id="@+id/match_teach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:text="What you can teach them"
                 android:layout_marginTop="8dp"
                 android:textColor="#444444" />
@@ -62,7 +64,8 @@
                 android:id="@+id/btn_request_session"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Match"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/skillswap"
                 android:layout_marginTop="12dp"
                 android:backgroundTint="?attr/colorPrimary"
                 android:textColor="@android:color/white" />

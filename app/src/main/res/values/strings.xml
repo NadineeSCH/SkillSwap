@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SkillSwap</string>
+    <string name="skillset">Skillset</string>
+    <string name="skillwish">Skillwish</string>
+    <string name="skillswap">Skillswap</string>
+    <string name="skillswap_invite">Send Skillswap Request</string>
+    <string name="matchMessage">Type in a short message:</string>
+    <string name="skilllearnSelection">Select skills to learn:</string>
+    <string name="skillteachSelection">Select skills to teach:</string>
 </resources>

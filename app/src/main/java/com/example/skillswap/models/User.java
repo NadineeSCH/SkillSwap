@@ -43,6 +43,14 @@ public class User {
         return id;
     }
 
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
     public List<String> getTeach() {
         return teach;
     }
@@ -50,6 +58,7 @@ public class User {
     public List<String> getLearn() {
         return learn;
     }
+
 
     //methods to add to teach list and learn list
 

@@ -47,6 +47,8 @@ public class MatchAdaptor extends RecyclerView.Adapter<MatchAdaptor.MatchViewHol
     public void onBindViewHolder(@NonNull MatchViewHolder holder, int position) {
         Match match = matchList.get(position);
         holder.name.setText(match.matchedUser.getName());
+        holder.profileImage.setImageResource(match.matchedUser.getImageId());
+        holder.profileImage.setBackgroundResource(R.drawable.profile_circle_background);
         String learn_string = "Skillset: ";
         for (String learn : match.learnArr){ //things they can offer the current user
             learn_string = learn_string + learn + ", "; //format it accordingly

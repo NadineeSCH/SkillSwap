@@ -1,6 +1,14 @@
 package com.example.skillswap;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -65,7 +73,7 @@ public class MatchPage extends AppCompatActivity {
                 "u3",
                 "Charlie",
                 Arrays.asList("Public Speaking", "Cooking"),
-                Arrays.asList("Java", "Photography")
+                Arrays.asList("Java", "Photography"),R.drawable.sample_u3
         ));
 
         otherUsers.add(new User(
@@ -91,6 +99,9 @@ public class MatchPage extends AppCompatActivity {
         MatchAdaptor matchAdaptor = new MatchAdaptor(matchedUsers, new MatchAdaptor.OnMatchClickListener() {
             @Override
             public void onMatchClick(Match match) {
+                //Toast.makeText(MatchPage.this,"clicked",Toast.LENGTH_SHORT).show();
+                showDialog(match);
+
 
             }
         });
@@ -114,6 +125,46 @@ public class MatchPage extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper
                 = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
+
+    }
+
+    private void showDialog(Match match){
+        Dialog dialog = new Dialog(MatchPage.this);
+        dialog.setContentView(R.layout.activity_set_match);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_bg);
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        // fetch the values from the match object, then set the contents of the widgets
+
+        TextView userName= dialog.findViewById(R.id.matchedUserName);
+        ImageView profilePicture = dialog.findViewById(R.id.profilePicture);
+        profilePicture.setImageResource(match.matchedUser.getImageId());
+        userName.setText(match.matchedUser.getName());
+
+        LinearLayout containerLearn = dialog.findViewById(R.id.selectContainerLearn);
+
+        List<String> learnList = match.learnArr;
+
+        for (String skill : learnList) {
+            View skillView = inflater.inflate(R.layout.skill_selection, containerLearn, false);
+            CheckBox checkBox = skillView.findViewById(R.id.selectSkill);
+            checkBox.setText(skill);
+            containerLearn.addView(skillView);
+        }
+
+        LinearLayout containerTeach = dialog.findViewById(R.id.selectContainerTeach);
+
+        List<String> teachList = match.teachArr;
+
+        for (String skill : teachList) {
+            View skillView = inflater.inflate(R.layout.skill_selection, containerTeach, false);
+            CheckBox checkBox = skillView.findViewById(R.id.selectSkill);
+            checkBox.setText(skill);
+            containerTeach.addView(skillView);
+        }
+
+        dialog.show();
 
     }
 }

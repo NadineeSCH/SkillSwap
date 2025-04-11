@@ -11,8 +11,9 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your matches"
-        android:textSize="45dp"
+        android:text="Your skill matches"
+        android:fontFamily="monospace"
+        android:textSize="30dp"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent" />
 

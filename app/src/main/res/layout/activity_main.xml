@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:fontFamily="monospace"
         android:layout_gravity="center"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cassie"
+                android:fontFamily="serif"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"/>
@@ -60,7 +62,7 @@
                 android:id="@+id/user_school"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Likes art"
+                android:text="Loves art!"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"/>
         </LinearLayout>
@@ -71,11 +73,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp">
+        android:layout_marginStart="16dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Skillset">
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:text="@string/skillset">
 
         </TextView>
 
@@ -83,30 +87,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="12dp"
-            android:layout_gravity="center">
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/photography"
-                android:scaleType="centerCrop"></ImageView>
+                android:scaleType="centerCrop" />
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="Photography"></TextView>
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Photography" />
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="4dp"
-                android:src="@drawable/art"
-                ></ImageView>
+                android:layout_marginStart="8dp"
+                android:src="@drawable/art" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="Art"></TextView>
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Art"/>
 
 
         </LinearLayout>
@@ -114,8 +121,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Skillwish"
-            android:paddingTop="5dp">
+            android:text="@string/skillwish"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:paddingTop="20dp">
 
         </TextView>
 
@@ -123,42 +132,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="12dp"
-            android:layout_gravity="center">
+            android:layout_marginStart="12dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/public_speaking"
-                android:scaleType="centerCrop"></ImageView>
+                android:scaleType="centerCrop"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="Public Speaking"></TextView>
+                android:fontFamily="sans-serif-black"
+                android:layout_marginStart="4dp"
+                android:text="Public Speaking"/>
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="4dp"
-                android:src="@drawable/dance"
-                ></ImageView>
+                android:layout_marginStart="8dp"
+                android:src="@drawable/dance"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="Dancing"></TextView>
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Dancing"/>
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="4dp"
-                android:src="@drawable/cook"
-                ></ImageView>
+                android:layout_marginStart="8dp"
+                android:src="@drawable/cook"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="Cook"></TextView>
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Cook"/>
 
 
 
@@ -171,6 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Find Matches"
+        android:fontFamily="sans-serif-black"
         android:layout_gravity="center"
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintLeft_toLeftOf="parent"
