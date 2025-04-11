@@ -34,10 +34,11 @@ This helps determine **early product-market fit** before building out full backe
 - **Match Discovery Page**
   - Uses hardcoded dummy data to simulate available matches.
   - Swap left or right to remove an undesirable match card.
+  - Card shows "Waiting for response.." for matches awaiting response after request is sent.
 
 - **Send Request Interaction**
   - Users can tap on a match to open a dialog.
-  - Dialog shows user info and allows sending a swap request by clicking on the "Send Skillswap Request" button.
+  - Dialog shows user info and allows sending a swap request by clicking on the "Send Skillswap Request" button. 
   - Click outside the dialog to cancel.
     
 - **Receiving Request Interaction**
@@ -84,6 +85,8 @@ Despite not being connected to real user data yet, this prototype simulates the 
 
 ## 📷 Screenshots
 
+![Home Page](HomePage.png) ![Match Page](MatchPage.png)
+![Receive Request](ReceiveRequestDialog.png) ![Send Request](SendRequestDialog.png)
 
 
 ---
