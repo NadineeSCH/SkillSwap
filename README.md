@@ -38,7 +38,7 @@ This helps determine **early product-market fit** before building out full backe
   - Swap left or right to remove an undesirable match card.
   - Card shows "Waiting for response.." for matches awaiting response after request is sent.
     
-    <img src="MatchPage.png" alt="Match Discovery Page" width="400"/>
+    <img src="MatchPagePending.png" alt="Match Discovery Page" width="400"/>
 
 - **Send Request Interaction**
   - Users can tap on a match to open a dialog.
