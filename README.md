@@ -31,7 +31,7 @@ This helps determine **early product-market fit** before building out full backe
 - **User Profile Page**
   - Displays current user's skills, image, and description.
     
-  <img src="HomePage.png" alt="Profile Page" width="400"/>
+    <img src="HomePage.png" alt="Profile Page" width="400"/>
 
 - **Match Discovery Page**
   - Uses hardcoded dummy data to simulate available matches.
