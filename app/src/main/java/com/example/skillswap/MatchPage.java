@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -96,15 +97,7 @@ public class MatchPage extends AppCompatActivity {
         List<Match> matchedUsers = SkillMatcher.findMatchingUsers(currentUser,otherUsers);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        MatchAdaptor matchAdaptor = new MatchAdaptor(matchedUsers, new MatchAdaptor.OnMatchClickListener() {
-            @Override
-            public void onMatchClick(Match match) {
-                //Toast.makeText(MatchPage.this,"clicked",Toast.LENGTH_SHORT).show();
-                showDialog(match);
-
-
-            }
-        });
+        MatchAdaptor matchAdaptor = new MatchAdaptor(MatchPage.this,matchedUsers);
         recyclerView.setAdapter(matchAdaptor);
 
         ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT ) {
@@ -128,7 +121,7 @@ public class MatchPage extends AppCompatActivity {
 
     }
 
-    private void showDialog(Match match){
+    public void showDialog(Match match, MatchAdaptor adapter, int position){
         Dialog dialog = new Dialog(MatchPage.this);
         dialog.setContentView(R.layout.activity_set_match);
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_bg);
@@ -139,8 +132,20 @@ public class MatchPage extends AppCompatActivity {
 
         TextView userName= dialog.findViewById(R.id.matchedUserName);
         ImageView profilePicture = dialog.findViewById(R.id.profilePicture);
+        Button sendRequestButton = dialog.findViewById(R.id.sendSkillswapRequest);
+
+
         profilePicture.setImageResource(match.matchedUser.getImageId());
         userName.setText(match.matchedUser.getName());
+        sendRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                match.setPending();
+                adapter.notifyItemChanged(position);
+                Toast.makeText(MatchPage.this,"Request sent",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
 
         LinearLayout containerLearn = dialog.findViewById(R.id.selectContainerLearn);
 

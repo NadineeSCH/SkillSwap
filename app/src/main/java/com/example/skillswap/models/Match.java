@@ -8,6 +8,9 @@ public class Match implements Comparable<Match>{
     public int learnCount;
     public int teachCount;
 
+    //Initial when first created, Pending when user requested,Approved when request is approved
+    public String status;
+
     public List<String> teachArr;
     public List<String> learnArr;
 
@@ -18,6 +21,7 @@ public class Match implements Comparable<Match>{
         this.teachArr=teachArr;
         this.teachCount = teachCount;
         this.learnCount = learnCount;
+        this.status = "Initial";
     }
 
     @Override
@@ -41,4 +45,25 @@ public class Match implements Comparable<Match>{
         int totalCount = learnCount + teachCount;
         return totalCount + " matches with " + matchedUser.getId();
     }
+
+    public void setPending(){
+        status = "Pending";
+    }
+
+    public boolean isPending(){
+        return status.equals("Pending");
+
+    }
+
+    //for further implementation
+
+    public void setApproved(){
+        status = "Approved";
+    }
+
+    public boolean isApproved(){
+        return status.equals("Approved");
+
+    }
 }
+
