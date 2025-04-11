@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="What you can learn from them"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:textColor="#444444" />
 
             <TextView
@@ -53,8 +53,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="What you can teach them"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:textColor="#444444" />
+
+
 
             <Button
                 android:id="@+id/btn_request_session"

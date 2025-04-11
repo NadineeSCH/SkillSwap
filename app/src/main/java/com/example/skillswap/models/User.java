@@ -1,5 +1,7 @@
 package com.example.skillswap.models;
 
+import com.example.skillswap.R;
+
 import java.util.List;
 
 public class User {
@@ -8,11 +10,23 @@ public class User {
     private List<String> teach;
     private List<String> learn;
 
+    private int imageId;
+
     public User(String id, String name, List<String> teach, List<String> learn) {
         this.id = id;
         this.name = name;
         this.teach = teach;
         this.learn = learn;
+        this.imageId = R.drawable.placeholderprofile;
+
+    }
+
+    public User(String id, String name, List<String> teach, List<String> learn,int imageId) {
+        this.id = id;
+        this.name = name;
+        this.teach = teach;
+        this.learn = learn;
+        this.imageId=imageId;
     }
 
     //getters and setters

@@ -32,7 +32,7 @@ public class SkillMatcher {
                     // Use Levenshtein distance to check similarity between skills
                     if (levenshtein.apply(skillToLearn.toLowerCase(), skillToTeach.toLowerCase()) <= threshold) {
                         userWants = true;
-                        learnArr.add(skillToLearn);
+                        learnArr.add(skillToTeach);
                         learnCount +=1;
                         break;
                     }
@@ -49,7 +49,7 @@ public class SkillMatcher {
                     if (levenshtein.apply(skillToTeach.toLowerCase(), skillToLearn.toLowerCase()) <= threshold) {
                         userCanHelp = true;
                         teachCount +=1;
-                        teachArr.add(skillToTeach);
+                        teachArr.add(skillToLearn);
                         break;
                     }
                 }
